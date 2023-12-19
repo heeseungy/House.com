@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.homelearn.back.user.UserMapper">
+    <insert id="addUser" parameterType="AddUserForm" useGeneratedKeys="true" keyProperty="id">
+        insert into users(password, email, name,role)
+        values (#{password}, #{email}, #{name},#{role})
+    </insert>
+
+    <resultMap id="user" type="com.homelearn.back.user.entity.User">
+        <result column="id" property="id"></result>
+        <result column="password" property="password"></result>
+        <result column="email" property="email"></result>
+        <result column="name" property="name"></result>
+        <result column="role" property="role"></result>
+    </resultMap>
+
+    <select id="findByIdUser" parameterType="Long" resultMap="user">
+        select *
+        from users
+        where id=${id}
+    </select>
+    <select id="findByEmail" parameterType="String" resultMap="user">
+        select *
+        from users
+        where email=#{email}
+    </select>
+
+    <select id="findByAllUsers" resultMap="user">
+        select *
+        from users
+    </select>
+
+    <select id="login" parameterType="LoginForm" resultMap="user">
+        select *
+        from users
+        where email=#{email} and password=#{password}
+        limit 1
+    </select>
+    <select id="findPassword" parameterType="AddUserForm" resultMap="user">
+        select *
+        from users
+        where email=#{email} and name=#{name}
+    </select>
+    <update id="editUser" parameterType="EditUserForm">
+        update users set password=#{password}, name=#{name}
+        where id=${id}
+    </update>
+    <delete id="deleteUser" parameterType="LoginForm">
+        delete
+        from users
+        where email=#{email} and password=#{password};
+    </delete>
+</mapper>
