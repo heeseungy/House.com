@@ -71,12 +71,15 @@ House.com은 **공공데이터**를 기반으로 부동산 매물을 찾는 사�
 ---
 
 - 회원가입
+- 
 ![1_회원가입(x2 25)](https://github.com/user-attachments/assets/6dee8c83-0984-4601-ab52-1deab72ef222)
 
 - 로그인
+- 
 ![2_로그인(x2 25)](https://github.com/user-attachments/assets/cd03c3b2-237c-4766-85a1-ae74263fd374)
 
 - 소셜로그인
+- 
 ![3_소셜로그인GIF](https://github.com/user-attachments/assets/f8e5024a-4343-47ce-a0f4-3191dcb7817e)
 
 - 매물 상세보기
@@ -90,4 +93,5 @@ House.com은 **공공데이터**를 기반으로 부동산 매물을 찾는 사�
 - 관리자 QnA 답변 및 삭제
 
 - 관리자 공지사항 CRUD
+- 
 ![9_관리자공지사항등록수정삭제](https://github.com/user-attachments/assets/660dfae4-bb53-42a1-adef-d4c24f2ef4dc)
